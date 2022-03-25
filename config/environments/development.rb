@@ -67,4 +67,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Insert livereload script at the head element with rest of the injected assets from the pipeline.
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end
