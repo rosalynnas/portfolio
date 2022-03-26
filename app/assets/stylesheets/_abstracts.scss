@@ -132,6 +132,7 @@ $text-colors: (
 }
 
 html {
+  font-family: "GT Super Display";
   font-size: 62.5%; // 10/16 = 62.5%, 1rem = 10px
 
   @include respond(tab-port) {
@@ -147,6 +148,6 @@ html {
   }
 
   @include respond(big-desktop) {
-    font-size: 112.5%; // 18/16 = 112.5%, 1rem = 18px
+    font-size: 137.5%; // 18/16 = 112.5%, 1rem = 22px
   }
 }

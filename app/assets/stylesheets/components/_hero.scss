@@ -1,0 +1,44 @@
+.hero {
+  position: relative;
+  display: flex;
+
+  &__text {
+    position: absolute;
+    margin: 0;
+    font-size: 22vw;
+    right: 13vw;
+    top: 40vh;
+  }
+
+  figure {
+    margin-top: auto;
+    margin-left: 10vw;
+
+    img {
+      height: 77vh;
+      width: 55vw;
+    }
+  }
+
+  @include respond(tab-land) {
+    &__text {
+      font-size: 20vw;
+      right: 11vw;
+      top: 25vh;
+    }
+
+    figure {
+      img {
+        height: 80vh;
+        width: 60vw;
+      }
+    }
+  }
+
+  @include respond(desktop) {
+    &__text {
+      font-size: 16vw;
+      right: 14.8vw;
+    }
+  }
+}

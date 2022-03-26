@@ -1,9 +1,14 @@
 figure {
+  margin: 0;
   display: grid;
   grid-template-columns: min-content min-content;
   grid-auto-rows: minmax(min-content, max-content);
   align-items: end;
   grid-column-gap: 0.2rem;
+
+  img {
+    object-fit: cover;
+  }
 
   figcaption {
     writing-mode: vertical-lr;
