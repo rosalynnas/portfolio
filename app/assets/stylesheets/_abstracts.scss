@@ -119,6 +119,18 @@ $text-colors: (
 //                                   FONTS
 // =============================================================================
 
+@font-face {
+  font-family: "GT Super Display";
+  font-weight: normal;
+  src: url("GT-Super-Display-Regular.woff2");
+}
+
+@font-face {
+  font-family: "GT Eesti Display";
+  font-weight: normal;
+  src: url("GT-Eesti-Display-Regular.woff2");
+}
+
 html {
   font-size: 62.5%; // 10/16 = 62.5%, 1rem = 10px
 
