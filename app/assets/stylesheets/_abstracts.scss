@@ -63,17 +63,40 @@ $text-colors: (
 
 // 3. MEDIA QUERIES
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   body {
     @include text-color("dark", "medium");
     @include background-color("dark", "high");
   }
+
+  a {
+    @include text-color("dark", "medium");
+  }
+
+  .social img {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(17%) saturate(171%)
+      hue-rotate(4deg) brightness(98%) contrast(89%);
+  }
+
+  .hero__text {
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.2),
+      0px -1px 0px rgba(0, 0, 0, 0.25);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   body {
     @include text-color("light", "medium");
     @include background-color("light", "high");
+  }
+
+  a {
+    @include text-color("light", "medium");
+  }
+
+  .hero__text {
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.2),
+      0px -1px 0px rgba(0, 0, 0, 0.75);
   }
 }
 
