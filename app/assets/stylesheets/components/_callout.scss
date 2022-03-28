@@ -1,0 +1,134 @@
+.callout {
+  display: grid;
+  padding-top: 6rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+
+  &__text-wrapper {
+    font-family: "GT Eesti Display";
+    font-size: 1.5rem;
+    order: 2;
+    line-height: 1.2;
+    text-align: justify;
+    text-transform: uppercase;
+    width: 23rem;
+  }
+
+  &__spaceholder {
+    float: right;
+    height: 15rem;
+  }
+
+  &__subtext {
+    clear: right;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    font-size: 0.8rem;
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+    text-align: left;
+
+    span:first-child {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__img-wrapper {
+    order: 1;
+    position: relative;
+    transform: translate(1rem, 0);
+
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 18rem;
+      height: 27rem;
+      bottom: 2rem;
+      right: 3rem;
+      @include background-color("light", "medium");
+      z-index: -1;
+    }
+
+    img {
+      width: 18rem;
+      height: auto;
+    }
+  }
+
+  @include respond(tab-port) {
+    padding-top: 2rem;
+    grid-row-gap: 6rem;
+
+    &__text-wrapper {
+      font-size: 2rem;
+      width: 34rem;
+    }
+
+    &__spaceholder {
+      height: 14rem;
+    }
+
+    &__subtext {
+      font-size: 1.5rem;
+      margin-right: 4rem;
+      margin-top: 5.5rem;
+    }
+
+    &__img-wrapper {
+      transform: translate(2rem, 0);
+      img {
+        width: 28rem;
+        height: 32rem;
+      }
+
+      &:after {
+        width: 28rem;
+        height: 32rem;
+        bottom: 3rem;
+        right: 4rem;
+      }
+    }
+  }
+
+  @include respond(tab-land) {
+    grid-column-gap: 4rem;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    justify-content: center;
+
+    &__text-wrapper {
+      order: 1;
+      font-size: 1.8rem;
+      width: 32rem;
+    }
+
+    &__spaceholder {
+      height: 14rem;
+    }
+
+    &__subtext {
+      font-size: 0.8rem;
+      margin-right: 5rem;
+      margin-top: 1.4rem;
+    }
+
+    &__img-wrapper {
+      order: 2;
+
+      &:after {
+        display: none;
+      }
+
+      img {
+        width: 16.5rem;
+        height: auto;
+      }
+    }
+  }
+}

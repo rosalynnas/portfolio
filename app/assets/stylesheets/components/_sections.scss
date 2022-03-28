@@ -1,8 +1,19 @@
 section {
   min-height: 100vh;
+  width: calc(100vw - 8rem);
+  margin: 0 auto;
   min-height: --webkit-fill-available;
 
   @supports (-webkit-touch-callout: none) {
-    min-height: --webkit-fill-available;
+    min-height: calc(100vh - 69px);
+  }
+
+  &.fullwidth {
+    width: 100vw;
+    margin: 0;
+  }
+
+  @include respond(tab-port) {
+    width: calc(100vw - 12rem);
   }
 }
