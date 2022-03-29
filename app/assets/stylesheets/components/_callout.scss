@@ -43,15 +43,25 @@
     position: relative;
     transform: translate(1rem, 0);
 
-    &:after {
+    &:after,
+    &:before {
       content: " ";
       display: block;
       position: absolute;
       width: 18rem;
-      height: 27rem;
+      height: 100%;
+    }
+
+    &:before {
+      bottom: 0;
+      right: 0;
+      transform: translate(-1.2rem, 0);
+      z-index: 1;
+    }
+
+    &:after {
       bottom: 2rem;
       right: 3rem;
-      @include background-color("light", "medium");
       z-index: -1;
     }
 
@@ -82,14 +92,23 @@
 
     &__img-wrapper {
       transform: translate(2rem, 0);
+
       img {
         width: 28rem;
         height: 32rem;
       }
 
-      &:after {
+      &:after,
+      &:before {
         width: 28rem;
-        height: 32rem;
+        height: 100%;
+      }
+
+      &:before {
+        transform: translate(-1.1rem, 0);
+      }
+
+      &:after {
         bottom: 3rem;
         right: 4rem;
       }
@@ -123,6 +142,11 @@
 
       &:after {
         display: none;
+      }
+
+      &:before {
+        width: 16.5rem;
+        height: 100%;
       }
 
       img {
