@@ -1,0 +1,82 @@
+.project {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 4rem 0;
+
+  & + .project {
+    margin-top: 2rem;
+  }
+
+  &__text {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    padding: 3rem 1rem;
+    line-height: 1.6rem;
+    position: relative;
+    max-width: 90%;
+    font-size: 1.2rem;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: calc(110%);
+      width: calc(110%);
+      z-index: -1;
+      right: -5%;
+      bottom: -5%;
+      background-image: url(painting-pattern-1-vojtech-bruzek-min.jpg);
+      background-size: cover;
+      background-position: right;
+    }
+  }
+
+  h2,
+  h4 {
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  @include respond(tab-port) {
+    max-width: 35rem;
+    padding: 0;
+
+    & + .project {
+      margin-top: 0;
+    }
+
+    &__text {
+      font-size: 1.2rem;
+      max-width: none;
+      padding: 3rem 3rem;
+
+      &:after {
+        height: 100%;
+        width: 100%;
+        right: 2rem;
+        bottom: 2rem;
+      }
+    }
+
+    &.even .project__text:after {
+      left: 2rem;
+      right: unset;
+      background-position: bottom;
+    }
+  }
+
+  @include respond(desktop) {
+    max-width: 45rem;
+
+    &__text {
+      font-size: 1rem;
+    }
+  }
+}

@@ -3,7 +3,7 @@ lock "~> 3.17.0"
 
 set :application, "portfolio"
 set :repo_url, "git@github.com:rosalynnas/portfolio.git"
-set :branch, "main"
+set :branch, "components"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
