@@ -1,0 +1,255 @@
+.portfolio-item {
+  display: grid;
+  grid-auto-columns: calc(100vw - 8rem);
+  grid-row-gap: 1rem;
+
+  &__title,
+  &__date,
+  &__text,
+  &__subtext,
+  &__environment h4,
+  &__environment ul {
+    margin: 0;
+  }
+
+  &__title,
+  &__date {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    order: -3;
+  }
+
+  &__date {
+    order: -2;
+  }
+
+  &__primary-img-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    height: 100%;
+
+    img {
+      display: block;
+      object-fit: contain;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      object-position: top;
+    }
+  }
+
+  &__text {
+    order: -1;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  &__subtext {
+    line-height: 1.8;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__environment {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: normal;
+
+    h4 {
+      border-top: 1px solid currentColor;
+      padding: 0.8rem 0.5rem 0.6rem;
+      font-weight: normal;
+    }
+
+    ul {
+      li {
+        border-bottom: 1px solid currentColor;
+        padding: 0.8rem 0.5rem 0.6rem;
+        margin-left: 8rem;
+        transform: translate(0, -2.3rem);
+        list-style-type: none;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__secondary-img-wrapper {
+    display: none;
+  }
+
+  @include respond(tab-port) {
+    display: block;
+    max-width: 80vw;
+
+    &__title,
+    &__date,
+    &__text,
+    &__subtext,
+    &__environment h4,
+    &__environment ul {
+      margin: 0;
+    }
+
+    &__title,
+    &__date {
+      order: unset;
+    }
+
+    &__date {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    &__primary-img-wrapper {
+      width: 20rem;
+      float: left;
+      clear: left;
+      margin-right: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    &__text,
+    &__subtext {
+      order: unset;
+      line-height: 1.8;
+      font-size: 1.3rem;
+    }
+
+    &__subtext::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2rem;
+    }
+
+    &__environment {
+      display: inline-block;
+      width: 60%;
+      margin-right: 4%;
+      vertical-align: top;
+    }
+
+    &__secondary-img-wrapper {
+      display: inline-block;
+      width: 35%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @include respond(desktop) {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-auto-columns: unset;
+    grid-template-rows: min-content min-content min-content min-content;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    align-content: start;
+    max-width: 80rem;
+
+    &__title,
+    &__date,
+    &__text,
+    &__subtext,
+    &__environment h4,
+    &__environment ul {
+      margin: 0;
+    }
+
+    &__title,
+    &__date {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &__title {
+      grid-column: 1 / 2;
+      text-align: right;
+    }
+
+    &__date {
+      grid-column: 2 / -1;
+      text-align: left;
+    }
+
+    &__primary-img-wrapper {
+      grid-column: 1 / 2;
+      grid-row: 2 / -1;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      height: 100%;
+      width: auto;
+      float: none;
+      clear: none;
+
+      img {
+        display: block;
+        object-fit: contain;
+        max-width: 100%;
+        flex: 1;
+        min-height: 0;
+        object-position: top;
+      }
+    }
+
+    &__text,
+    &__subtext {
+      text-overflow: ellipsis;
+    }
+
+    &__text {
+      font-size: 1rem;
+      grid-column: 2 / 4;
+    }
+
+    &__subtext {
+      font-size: 0.8rem;
+      grid-column: 2 / 4;
+      margin-bottom: 0.4rem;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &__environment {
+      grid-column: 2 / 3;
+      text-transform: uppercase;
+      display: block;
+      width: 24rem;
+      font-size: 0.8rem;
+      font-weight: normal;
+      margin-right: 1rem;
+    }
+
+    &__secondary-img-wrapper {
+      grid-column: 3 / -1;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
+      width: auto;
+
+      img {
+        display: block;
+        object-fit: contain;
+        max-width: 70%;
+        flex: 1;
+        min-height: 0;
+        object-position: top;
+      }
+    }
+  }
+}

@@ -87,16 +87,21 @@ $text-colors: (
       0px -1px 0px rgba(0, 0, 0, 0.25);
   }
 
-  .callout__img-wrapper::before {
-    @include background-color("dark", "hint");
+  .callout__img-wrapper img {
+    filter: sepia(50%);
   }
 
   .callout__img-wrapper::after {
     @include background-color("dark", "medium");
   }
 
-  .header__img-wrapper::after {
-    @include background-color("dark", "hint");
+  .header__img-wrapper img {
+    filter: brightness(1.05) sepia(30%);
+  }
+
+  .portfolio-item__primary-img-wrapper img,
+  .portfolio-item__secondary-img-wrapper img {
+    filter: sepia(40%);
   }
 }
 
@@ -119,16 +124,21 @@ $text-colors: (
       0px -1px 0px rgba(0, 0, 0, 0.75);
   }
 
-  .callout__img-wrapper::before {
-    @include background-color("light", "hint");
+  .callout__img-wrapper img {
+    filter: sepia(30%);
   }
 
   .callout__img-wrapper::after {
     @include background-color("light", "medium");
   }
 
-  .header__img-wrapper::after {
-    @include background-color("light", "hint");
+  .header__img-wrapper img {
+    filter: brightness(1.05) sepia(20%);
+  }
+
+  .portfolio-item__primary-img-wrapper img,
+  .portfolio-item__secondary-img-wrapper img {
+    filter: sepia(20%);
   }
 }
 
