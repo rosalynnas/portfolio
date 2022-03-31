@@ -1,4 +1,5 @@
 .portfolio-item {
+  padding-top: 5vh;
   display: grid;
   grid-auto-columns: calc(100vw - 8rem);
   grid-row-gap: 1rem;
@@ -155,6 +156,7 @@
     grid-template-rows: repeat(5, auto);
     grid-column-gap: 2rem;
     grid-row-gap: 1rem;
+    align-content: start;
     max-width: 80rem;
 
     &__title,
@@ -169,7 +171,7 @@
 
     &__title,
     &__date {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     &__title {

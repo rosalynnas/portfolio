@@ -5,16 +5,18 @@
   align-items: flex-end;
 
   &__content {
-    min-height: 80vh;
+    min-height: calc(100vh - 4rem);
     position: relative;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
 
     &:after {
       content: "";
       display: block;
-      width: 30vw;
+      width: 18vw;
+      margin-left: 4rem;
       height: 100%;
       position: absolute;
       background-image: url(painting-pattern-1-vojtech-bruzek-min.jpg);
@@ -28,7 +30,6 @@
 
   &__headline {
     margin-left: 35vw;
-    margin-top: 5vw;
     font-size: 4rem;
     text-transform: uppercase;
 
@@ -71,6 +72,7 @@
       &:after {
         width: 40%;
         height: 100%;
+        margin-left: 0;
       }
     }
 
