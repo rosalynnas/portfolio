@@ -107,6 +107,14 @@ $text-colors: (
   .project__text {
     @include background-color("dark", "medium");
   }
+
+  ::-moz-selection {
+    background-color: #205b6d;
+  }
+
+  ::selection {
+    background-color: #205b6d;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -147,6 +155,24 @@ $text-colors: (
 
   .project__text {
     @include background-color("light", "medium");
+  }
+
+  ::-moz-selection {
+    @include background-color("dark", "high");
+    @include text-color("dark", "medium");
+  }
+
+  ::selection {
+    @include background-color("dark", "high");
+    @include text-color("dark", "high");
+  }
+
+  ::-moz-selection {
+    background-color: #205b6d;
+  }
+
+  ::selection {
+    background-color: #205b6d;
   }
 }
 
