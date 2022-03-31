@@ -5,5 +5,9 @@
   padding: 2rem;
   text-transform: uppercase;
   font-family: "GT Eesti Display";
-  font-size: 0.7rem;
+  font-size: 1rem;
+
+  @include respond(tab-port) {
+    font-size: 0.8rem;
+  }
 }
