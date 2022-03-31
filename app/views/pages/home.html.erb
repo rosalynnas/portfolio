@@ -31,45 +31,8 @@
 	</figure>
 </section>
 
-<section class="header odd" id="portfolio">
-	<h2>development</h2>
-	<figure class="header__bg-img-wrapper">
-		<%= image_tag('painting-pattern-1-vojtech-bruzek-min.jpg',
-				alt: 'yellow blue and white abstract painting') %>
-	</figure>
-	<figure class="header__img-wrapper">
-		<%= image_tag('minimal-tree-in-black-and-white-mila-tovar-min.jpg',
-				alt: 'minimal sketch of a black and white tree') %>
-		<figcaption class="inner">Minimal Tree in Black and White by Mila Tovar</figcaption>
-	</figure>
-</section>
+<%= render 'shared/portfolio' %>
 
-<section class="portfolio-item">
-	<h3 class="portfolio-item__title">sezia</h3>
-	<p class="portfolio-item__date">2018 - 2021</p>
-	<figure class="portfolio-item__primary-img-wrapper">
-		<%= image_tag('sezia-primary.jpg',
-				alt: 'landing image of sezia.co') %>
-	</figure>
-	<span class="portfolio-item__text">Sezia is a web application that empowers individuals suffering from Malassezia related skin diseases by helping them avoid products which aggravate their condition. I designed the project from start to finish, using OOD patterns to create a text analysis algorithm then combining research data and user input to build a database.  After growing the application and user base for four years, I sold the app and worked for the purchasing company as a developer.</span>
-	<span class="portfolio-item__subtext">The database contains over 758k cosmetic ingredients which are matched against inputted product data. User experience is prioritized with interactive AJAX based form submissions and page rendering for the Amazon product catalogue. Throughout maintenance and development, I conducted thorough testing of new features and dependency updates on staging environments to streamline deployment and reduce development time. </span>
-	<div class="portfolio-item__environment">
-		<h4>environment:</h4>
-		<ul>
-			<li>ruby on rails</li>
-			<li>postgresql</li>
-			<li>digital ocean</li>
-			<li>passenger/nginx</li>
-			<li>javascript</li>
-			<li>amazon</li>
-			<li>mailchimp</li>
-		</ul>
-	</div>
-	<figure class="portfolio-item__secondary-img-wrapper">
-		<%= image_tag('sezia-secondary.jpg',
-				alt: 'image of ingredient lists on sezia.co') %>
-	</figure>
-</section>
 
 <section class="header even" id="projects">
 	<h2>passion<br>projects</h2>
@@ -83,41 +46,9 @@
 	</figure>
 </section>
 
-<section class="project">
-	<div class="project__text">
-		<h3>SYNA</h3>
-		<p>SYNA is a 3D spatial notetaking app that enables users to take notes in a nonlinear fashion that is illustrative of how humans process information.</p>
-		<p>SYNA is short for "synapse." Neurons are specialized cells which pass signals to individual target cells, and synapses are the means by which they do so. They can be seen as representing the union between two seperate elements.</p>
-		<p>The app allows users to represent concepts and ideas as neurons and relate them together via synapses. The interconnected web is modelled in 3D for use as a dictionary for reference or studying.</p>
-		<h4>CURRENT FOCUS</h4>
-		<p>My current focus is on SYNA′ (pronounced syna prime) which is a derivation of the core app. This proof of concept demonstrates the technology with topics in calculus.</p>
-	</div>
-</section>
+<%= render "shared/projects" %>
 
-
-<section class="project even">
-	<div class="project__text">
-		<h3>KATO</h3>
-		<p>KATO is a concept store of pre-loved and sustainable clothing and homewares.</p>
-		<p>I've always loved researching unique and interesting brands from all over the world. My intent with KATO is to evolve this research into curated collection of brands with sustainable visions, strong female leadership, or dedication to creating products that will that will last for generations to come.</p>
-		<p>KATO is short for “katoptrizo,” the phonetic sound of the greek word meaning "to reflect" (κατοπτρίζω). It is a nod to reflecting inward on the purchasing choices we make and their effect on the world. It is move towards slow fashion and intentional living.</p>
-		<h4>CURRENT FOCUS</h4>
-		<p>My current focus for KATO is on branding, website design, and market research.</p>
-	</div>
-</section>
-
-<section class="contact fullwidth" id="contact">
-	<div class="contact__content">
-		<div class="contact__headline">
-		<span>say</span>
-		<span>hello</span>
-		</div>
-		<p class="contact__text">
-			Thanks for checking out my portfolio! If you're interested in what I do or have a project you want to collaborate on, please reach out to me. I'd love to hear from you.
-		<%= link_to "hello@rosalynnas.com", "mailto:hello@rosalynnas.com", class: "contact__email" %>
-		</p>
-	</div>
-</section>
+<%= render "shared/contact" %>
 
 <div class="copyright">
 <span>&#169 rosalynn ashwood | 2022</span>
