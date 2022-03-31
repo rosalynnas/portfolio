@@ -3,7 +3,7 @@ section {
   width: calc(100vw - 8rem);
   margin: 0 auto;
   min-height: --webkit-fill-available;
-
+  outline: none;
   @supports (-webkit-touch-callout: none) {
     min-height: calc(100vh - 69px);
   }
