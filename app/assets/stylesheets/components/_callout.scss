@@ -10,9 +10,9 @@
 
   &__text-wrapper {
     font-family: "GT Eesti Display";
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     order: 2;
-    line-height: 1.2;
+    line-height: 1.5;
     text-align: justify;
     text-transform: uppercase;
     width: 23rem;
@@ -28,10 +28,11 @@
     display: flex;
     flex-direction: column;
     float: left;
-    font-size: 0.9rem;
-    margin-right: 2rem;
-    margin-top: 1.2rem;
+    margin-top: 2.5rem;
     text-align: left;
+    font-size: 1.2rem;
+    margin-right: 1.8rem;
+    line-height: 1.4;
 
     span:first-child {
       margin-bottom: 1.5rem;
@@ -65,8 +66,9 @@
     grid-row-gap: 6rem;
 
     &__text-wrapper {
-      font-size: 2rem;
-      width: 34rem;
+      font-size: 1.8rem;
+      width: 38rem;
+      line-height: 1.6;
     }
 
     &__spaceholder {
@@ -74,9 +76,9 @@
     }
 
     &__subtext {
-      font-size: 1.5rem;
-      margin-right: 4rem;
-      margin-top: 5.5rem;
+      font-size: 1.4rem;
+      margin-right: 3rem;
+      margin-top: 1.6rem;
     }
 
     &__img-wrapper {
@@ -104,7 +106,7 @@
 
     &__text-wrapper {
       order: 1;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       width: 32rem;
     }
 
@@ -113,9 +115,9 @@
     }
 
     &__subtext {
-      font-size: 0.8rem;
+      font-size: 1.4rem;
       margin-right: 5rem;
-      margin-top: 1.4rem;
+      margin-top: 1.2rem;
     }
 
     &__img-wrapper {
@@ -129,6 +131,21 @@
         width: 16.5rem;
         height: auto;
       }
+    }
+  }
+
+  @include respond(desktop) {
+    &__text-wrapper {
+      font-size: 1.4rem;
+      width: 26rem;
+      line-height: 1.55;
+    }
+
+    &__subtext {
+      font-size: 0.8rem;
+      margin-top: 0;
+      margin-right: 3rem;
+      line-height: 1.35;
     }
   }
 }
