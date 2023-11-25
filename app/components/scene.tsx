@@ -12,12 +12,68 @@ import Dots from "public/images/dots-white.png";
 import MoonOne from "public/images/moon-one.svg";
 import MoonTwo from "public/images/moon-two.svg";
 import MoonThree from "public/images/moon-three.svg";
-import MoonFour from "public/images/mooon-four.svg";
+import MoonFour from "public/images/moon-four.svg";
 import MoonFive from "public/images/moon-five.svg";
 import RingSolid from "public/images/ring-solid.svg";
 import RingThick from "public/images/ring-thick.svg";
 import RingDotted from "public/images/ring-dotted.svg";
 import RingThin from "public/images/ring-thin.svg";
+
+const ring = {
+  hidden: { opacity: 0, height: 0, width: 0, transform: "rotate(0)" },
+  visible: (diameter: number) => ({
+    opacity: 1,
+    width: `${diameter}rem`,
+    height: `${diameter}rem`,
+    transition: {
+      type: "spring",
+      delay: diameter * 0.01,
+    },
+  }),
+  rotating: (diameter: number) => ({
+    transform: "rotate(360deg)",
+    transition: {
+      transform: {
+        type: "linear",
+        duration: diameter * 2.5,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    },
+  }),
+};
+
+const moon = {
+  hidden: {
+    opacity: 0,
+    height: 0,
+    width: 0,
+    top: 0,
+    left: "50%",
+    transform: "translate(-50%, -50%) rotate(0)",
+  },
+  visible: (diameter: number) => ({
+    opacity: 1,
+    height: `${diameter}rem`,
+    width: `${diameter}rem`,
+    transition: {
+      type: "spring",
+      delay: 2,
+    },
+  }),
+  rotating: {
+    transform: "translate(-50%, -50%) rotate(360deg)",
+    transition: {
+      delay: 2,
+      transform: {
+        type: "linear",
+        duration: 5,
+        repeat: Infinity,
+        ease: "linear",
+      },
+    },
+  },
+};
 
 export function Scene() {
   return (
@@ -26,201 +82,109 @@ export function Scene() {
         <Image src={Logo} alt="R.A." width={86} height={41} priority />
       </div>
 
-      <div className="absolute grid place-items-center top-0 bottom-0 left-0 right-0 overflow-hidden -z-1">
+      <motion.div className="absolute grid scale-1/2 place-items-center top-0 bottom-0 left-0 right-0 overflow-hidden -z-1">
         <motion.div
-          className="absolute"
-          initial={{ height: "0rem", width: "0rem" }}
-          animate={{ height: "10rem", width: "10rem" }}
-          transition={{
-            type: "spring",
-          }}
+          className="absolute h-[10rem] w-[10rem]"
+          variants={ring}
+          key="ring1"
+          custom={10}
+          initial="hidden"
+          animate="visible"
         >
           <Image src={RingDotted} alt="text.." fill={true} />
         </motion.div>
 
         <motion.div
-          className="absolute"
-          initial={{ height: "10rem", width: "10rem", opacity: 0 }}
-          animate={{
-            height: "12rem",
-            width: "12rem",
-            transform: "rotate(360deg)",
-            opacity: 1,
-          }}
-          transition={{
-            type: "spring",
-            duration: 2,
-            transform: {
-              type: "linear",
-              duration: 18,
-              delay: 3,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
+          className="absolute h-[12rem] w-[12rem]"
+          variants={ring}
+          key="ring2"
+          custom={12}
+          initial="hidden"
+          animate={["visible", "rotating"]}
         >
           <Image src={RingThick} alt="text.." fill={true} />
           <motion.div
-            className="absolute"
-            initial={{
-              height: 0,
-              width: 0,
-              top: 0,
-              left: "50%",
-              y: "-50%",
-              x: "-50%",
-            }}
-            animate={{ height: "1rem", width: "1rem" }}
-            transition={{
-              type: "spring",
-              delay: 2,
-            }}
+            className="absolute h-[1rem] w-[1rem]"
+            variants={moon}
+            initial="hidden"
+            custom={1}
+            animate={["visible"]}
           >
             <Image src={MoonTwo} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="absolute"
-          initial={{ height: "10rem", width: "10rem", opacity: 0 }}
-          animate={{ height: "16rem", width: "16rem", opacity: 1 }}
-          transition={{
-            type: "spring",
-            duration: 3,
-          }}
+          className="absolute h-[16rem] w-[16rem]"
+          variants={ring}
+          key="ring3"
+          custom={16}
+          initial="hidden"
+          animate="visible"
         >
           <Image src={RingSolid} alt="text.." fill={true} />
         </motion.div>
 
         <motion.div
-          className="absolute"
-          initial={{ height: "10rem", width: "10rem", opacity: 0 }}
-          animate={{
-            height: "17rem",
-            width: "17rem",
-            transform: "rotate(360deg)",
-            opacity: 1,
-          }}
-          transition={{
-            type: "spring",
-            duration: 4,
-            transform: {
-              type: "linear",
-              duration: 18,
-              delay: 3,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
+          className="absolute h-[17rem] w-[17rem]"
+          variants={ring}
+          key="ring4"
+          custom={17}
+          initial="hidden"
+          animate={["visible", "rotating"]}
         >
           <Image src={RingThick} alt="text.." fill={true} />
           <motion.div
-            className="absolute"
-            initial={{
-              height: 0,
-              width: 0,
-              top: "50%",
-              left: 0,
-              y: "-50%",
-              x: "-50%",
-            }}
-            animate={{ height: "3rem", width: "3rem" }}
-            transition={{
-              type: "spring",
-              delay: 2,
-            }}
+            className="absolute h-[2rem] w-[2rem]"
+            variants={moon}
+            initial="hidden"
+            custom={2}
+            animate={["visible", "rotating"]}
           >
             <Image src={MoonOne} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="absolute"
-          initial={{ height: "10rem", width: "10rem", opacity: 0 }}
-          animate={{
-            height: "26rem",
-            width: "26rem",
-            transform: "rotate(360deg)",
-            opacity: 1,
-          }}
-          transition={{
-            type: "spring",
-            duration: 5,
-            transform: {
-              type: "linear",
-              duration: 18,
-              delay: 3,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
+          className="absolute h-[32rem] w-[32rem]"
+          variants={ring}
+          key="ring5"
+          custom={32}
+          initial="hidden"
+          animate={["visible", "rotating"]}
         >
           <Image src={RingSolid} alt="text.." fill={true} />
           <motion.div
-            className="absolute"
-            initial={{
-              height: 0,
-              width: 0,
-              top: "50%",
-              right: 0,
-              y: "-50%",
-              x: "50%",
-            }}
-            animate={{ height: "3rem", width: "3rem" }}
-            transition={{
-              type: "spring",
-              delay: 2,
-            }}
+            className="absolute h-[3rem] w-[3rem]"
+            variants={moon}
+            initial="hidden"
+            custom={3}
+            animate={["visible", "rotating"]}
           >
             <Image src={MoonThree} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="absolute"
-          initial={{ height: "10rem", width: "10rem", opacity: 0 }}
-          animate={{
-            height: "48rem",
-            width: "48rem",
-            transform: "rotate(360deg)",
-            opacity: 1,
-          }}
-          transition={{
-            type: "spring",
-            duration: 6,
-            transform: {
-              type: "linear",
-              duration: 18,
-              delay: 3,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
+          className="absolute h-[56rem] w-[56rem"
+          variants={ring}
+          key="ring6"
+          custom={56}
+          initial="hidden"
+          animate={["visible", "rotating"]}
         >
           <Image src={RingThin} alt="text.." fill={true} />
           <motion.div
-            className="absolute"
-            initial={{
-              height: 0,
-              width: 0,
-              top: "50%",
-              left: 0,
-              y: "-50%",
-              x: "-50%",
-            }}
-            animate={{
-              height: "3rem",
-              width: "3rem",
-            }}
-            transition={{
-              type: "spring",
-              delay: 2,
-            }}
+            className="absolute h-[3rem] w-[3rem]"
+            variants={moon}
+            initial="hidden"
+            custom={4}
+            animate={["visible", "rotating"]}
           >
             <Image src={MoonFive} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       <div className="absolute bottom-0 left-10">
         <Image src={CirclesWhite} alt="text.." width={250} height={250} />
@@ -228,10 +192,8 @@ export function Scene() {
       <div className="absolute top-10 right-0">
         <Image src={CirclesAndLine} alt="text.." width={200} height={200} />
         <motion.div
-          className="absolute"
+          className="absolute h-[5rem] w-[5rem]"
           initial={{
-            height: "3rem",
-            width: "3rem",
             top: "50%",
             left: 0,
             y: "-50%",
@@ -239,18 +201,13 @@ export function Scene() {
             rotate: 0,
           }}
           animate={{
-            height: "5rem",
-            width: "5rem",
             rotate: 360,
           }}
           transition={{
             type: "spring",
-            delay: 3,
             rotate: {
-              type: "linear",
               duration: 5,
               repeat: Infinity,
-              ease: "linear",
             },
           }}
         >
