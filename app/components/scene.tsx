@@ -20,14 +20,19 @@ import RingDotted from "public/images/ring-dotted.svg";
 import RingThin from "public/images/ring-thin.svg";
 
 const ring = {
-  hidden: { opacity: 0, height: 0, width: 0, transform: "rotate(0)" },
+  hidden: (diameter: number) => ({
+    opacity: 0,
+    height: 0,
+    width: 0,
+    transform: `rotate(${diameter * 3}deg)`,
+  }),
   visible: (diameter: number) => ({
     opacity: 1,
-    width: `${diameter}rem`,
-    height: `${diameter}rem`,
+    width: `${diameter}%`,
+    height: `${diameter}%`,
     transition: {
       type: "spring",
-      delay: diameter * 0.01,
+      delay: diameter * 0.009,
     },
   }),
   rotating: (diameter: number) => ({
@@ -35,7 +40,7 @@ const ring = {
     transition: {
       transform: {
         type: "linear",
-        duration: diameter * 2.5,
+        duration: 18,
         repeat: Infinity,
         ease: "linear",
       },
@@ -48,14 +53,12 @@ const moon = {
     opacity: 0,
     height: 0,
     width: 0,
-    top: 0,
-    left: "50%",
     transform: "translate(-50%, -50%) rotate(0)",
   },
   visible: (diameter: number) => ({
     opacity: 1,
-    height: `${diameter}rem`,
-    width: `${diameter}rem`,
+    height: `${diameter}%`,
+    width: `${diameter}%`,
     transition: {
       type: "spring",
       delay: 2,
@@ -64,7 +67,7 @@ const moon = {
   rotating: {
     transform: "translate(-50%, -50%) rotate(360deg)",
     transition: {
-      delay: 2,
+      delay: 3,
       transform: {
         type: "linear",
         duration: 5,
@@ -77,148 +80,225 @@ const moon = {
 
 export function Scene() {
   return (
-    <div className="h-[calc(100dvh-6rem)] max-h-[calc(100dvh-6rem)] overflow-x-clip relative grid place-items-center">
-      <div className="absolute top-10 left-20">
-        <Image src={Logo} alt="R.A." width={86} height={41} priority />
+    <div className="h-[100dvh] max-h-[100dvh] md:h-[calc(100dvh-6rem)] md:max-h-[calc(100dvh-6rem)] overflow-x-clip relative grid place-items-center">
+      <div className="absolute top-0 h-20 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center">
+        <div className="w-16 h-8 lg:w-auto lg:h-auto">
+          <Image
+            src={Logo}
+            alt="R.A."
+            width={86}
+            height={41}
+            className="object-contain"
+          />
+        </div>
+        <div className="w-20 h-full lg:w-32 relative">
+          <Image
+            src={CirclesAndLine}
+            alt="text.."
+            fill={true}
+            className="object-contain"
+          />
+          <motion.div
+            className="h-1/2 w-1/2 absolute"
+            initial={{
+              top: "50%",
+              left: 0,
+              y: "-50%",
+              x: "-50%",
+              rotate: 0,
+            }}
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              type: "spring",
+              rotate: {
+                duration: 5,
+                repeat: Infinity,
+              },
+            }}
+          >
+            <Image src={MoonThree} alt="text.." fill={true} />
+          </motion.div>
+        </div>
       </div>
 
-      <motion.div className="absolute grid scale-1/2 place-items-center top-0 bottom-0 left-0 right-0 overflow-hidden -z-1">
+      <motion.div className="absolute h-2/3 top-20 w-full md:top-0 xl:h-[45rem] xl:w-[45rem] grid place-items-center -z-1 ">
         <motion.div
-          className="absolute h-[10rem] w-[10rem]"
+          className="absolute"
           variants={ring}
-          key="ring1"
-          custom={10}
+          custom={22}
           initial="hidden"
           animate="visible"
         >
-          <Image src={RingDotted} alt="text.." fill={true} />
+          <svg
+            className="absolute w-full h-full left-0 top-0"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="49.5"
+              stroke="white"
+              strokeWidth="0.5"
+              strokeDasharray="0 2"
+              strokeLinecap="round"
+            />
+          </svg>
         </motion.div>
 
         <motion.div
-          className="absolute h-[12rem] w-[12rem]"
+          className="absolute"
           variants={ring}
-          key="ring2"
-          custom={12}
+          custom={30}
           initial="hidden"
           animate={["visible", "rotating"]}
         >
-          <Image src={RingThick} alt="text.." fill={true} />
+          <svg
+            className="absolute w-full h-full left-0 top-0"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <circle cx="50" cy="50" r="49.5" stroke="white" strokeWidth="0.1" />
+          </svg>
           <motion.div
-            className="absolute h-[1rem] w-[1rem]"
+            className="absolute top-[2px] left-1/2 -translate-x-1/2 -translate-y-1/2"
             variants={moon}
             initial="hidden"
-            custom={1}
-            animate={["visible"]}
+            custom={10}
+            animate={["visible", "rotating"]}
           >
             <Image src={MoonTwo} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="absolute h-[16rem] w-[16rem]"
+          className="absolute"
           variants={ring}
-          key="ring3"
-          custom={16}
+          custom={38}
           initial="hidden"
           animate="visible"
         >
-          <Image src={RingSolid} alt="text.." fill={true} />
+          <svg
+            className="absolute w-full h-full left-0 top-0"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <circle cx="50" cy="50" r="49.5" stroke="white" strokeWidth="0.1" />
+          </svg>
         </motion.div>
 
         <motion.div
-          className="absolute h-[17rem] w-[17rem]"
+          className="absolute"
           variants={ring}
-          key="ring4"
-          custom={17}
+          custom={40}
           initial="hidden"
           animate={["visible", "rotating"]}
         >
-          <Image src={RingThick} alt="text.." fill={true} />
+          <svg
+            className="absolute w-full h-full left-0 top-0"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <circle cx="50" cy="50" r="49.5" stroke="white" strokeWidth="0.3" />
+          </svg>
           <motion.div
-            className="absolute h-[2rem] w-[2rem]"
+            className="absolute top-[3px] left-1/2 -translate-x-1/2 -translate-y-1/2"
             variants={moon}
             initial="hidden"
-            custom={2}
+            custom={10}
             animate={["visible", "rotating"]}
           >
-            <Image src={MoonOne} alt="text.." fill={true} />
+            <Image src={MoonFour} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="absolute h-[32rem] w-[32rem]"
+          className="absolute"
           variants={ring}
-          key="ring5"
-          custom={32}
+          custom={75}
           initial="hidden"
           animate={["visible", "rotating"]}
         >
-          <Image src={RingSolid} alt="text.." fill={true} />
-          <motion.div
-            className="absolute h-[3rem] w-[3rem]"
-            variants={moon}
-            initial="hidden"
-            custom={3}
-            animate={["visible", "rotating"]}
+          <svg
+            className="absolute w-full h-full left-0 top-0"
+            viewBox="0 0 100 100"
+            fill="none"
           >
-            <Image src={MoonThree} alt="text.." fill={true} />
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="absolute h-[56rem] w-[56rem"
-          variants={ring}
-          key="ring6"
-          custom={56}
-          initial="hidden"
-          animate={["visible", "rotating"]}
-        >
-          <Image src={RingThin} alt="text.." fill={true} />
+            <circle
+              cx="50"
+              cy="50"
+              r="49.5"
+              stroke="white"
+              strokeWidth="0.05"
+            />
+          </svg>
           <motion.div
-            className="absolute h-[3rem] w-[3rem]"
+            className="absolute top-[2px] left-1/2 -translate-x-1/2 -translate-y-1/2"
             variants={moon}
             initial="hidden"
-            custom={4}
+            custom={6}
             animate={["visible", "rotating"]}
           >
             <Image src={MoonFive} alt="text.." fill={true} />
           </motion.div>
         </motion.div>
+
+        <motion.div
+          className="absolute"
+          variants={ring}
+          custom={110}
+          initial="hidden"
+          animate={["visible", "rotating"]}
+        >
+          <svg
+            className="absolute w-full h-full left-0 top-0"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="49.5"
+              stroke="white"
+              strokeWidth="0.15"
+              strokeDasharray="0 0.5"
+              strokeLinecap="round"
+            />
+          </svg>
+          <motion.div
+            className="absolute top-[3px] left-1/2 -translate-x-1/2 -translate-y-1/2"
+            variants={moon}
+            initial="hidden"
+            custom={6}
+            animate="visible"
+          >
+            <Image src={MoonOne} alt="text.." fill={true} />
+          </motion.div>
+        </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-0 left-10">
+      <div className="absolute hidden bottom-0 left-20 lg:block">
         <Image src={CirclesWhite} alt="text.." width={250} height={250} />
       </div>
-      <div className="absolute top-10 right-0">
-        <Image src={CirclesAndLine} alt="text.." width={200} height={200} />
-        <motion.div
-          className="absolute h-[5rem] w-[5rem]"
-          initial={{
-            top: "50%",
-            left: 0,
-            y: "-50%",
-            x: "-50%",
-            rotate: 0,
-          }}
-          animate={{
-            rotate: 360,
-          }}
-          transition={{
-            type: "spring",
-            rotate: {
-              duration: 5,
-              repeat: Infinity,
-            },
-          }}
-        >
-          <Image src={MoonThree} alt="text.." fill={true} />
-        </motion.div>
+      <div className="absolute bottom-5 lg:bottom-16 right-[8%] md:right-[12%] w-32 md:w-auto">
+        <Image
+          src={TallTree}
+          alt="text.."
+          width={160}
+          height={300}
+          className="object-cover"
+        />
       </div>
-      <div className="absolute bottom-5 lg:bottom-20 right-[12%]">
-        <Image src={TallTree} alt="text.." width={150} height={300} />
-      </div>
-      <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/2">
-        <Image src={Dots} alt="text.." width={1200} height={300} />
+      <div className="absolute bottom-0 right-0 translate-y-1/2 w-full md:w-auto">
+        <Image
+          src={Dots}
+          alt="text.."
+          width="1000"
+          height="300"
+          className="object-cover object-left"
+        />
       </div>
     </div>
   );
