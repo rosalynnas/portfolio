@@ -4,9 +4,23 @@ import CirclesBlack from "/public/images/circles-black.png";
 
 export function Footer() {
   return (
-    <div className="mx-20 flex items-end justify-between">
-      <div className="mb-20">
-        <div className="mb-5 -ms-1">
+    <div className="footer relative w-4/5 pb-20 lg:w-auto lg:p-20 mx-auto leading-relaxed">
+      <Image
+        className="absolute bottom-0 left-48 lg:left-80 lg:w-20"
+        src={ShortTree}
+        alt="text.."
+        width={130}
+        height={130}
+      />
+      <Image
+        className="absolute bottom-0 right-0 w-1/3 lg:w-72 lg:right-10"
+        src={CirclesBlack}
+        alt="text.."
+        width={300}
+        height={300}
+      />
+      <div className="flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
+        <div>
           <Image
             className="invert"
             src="/images/logo.svg"
@@ -14,37 +28,27 @@ export function Footer() {
             width={86}
             height={41}
           />
+          <p className="mt-5">Rosalynn Ashwood</p>
+          <p>hello@rosalynnas.com</p>
+          <p>+1 418 262 9406</p>
         </div>
-        <p>Rosalynn Ashwood</p>
-        <p>hello@rosalynnas.com</p>
-        <p>+1 418 262 9406</p>
+        <div>
+          <p className="mb-5">Find me on </p>
+          <p>
+            <a className="underline" href="https://github.com/rosalynnas">
+              GitHub
+            </a>
+          </p>
+          <p>
+            <a
+              className="underline"
+              href="https://www.linkedin.com/in/rosalynnas/"
+            >
+              LinkedIn
+            </a>
+          </p>
+        </div>
       </div>
-      <Image
-        src={ShortTree}
-        alt="Tall white tree design"
-        width={100}
-        height={100}
-      />
-      <div className="mb-20">
-        <p className="mb-5">Find me on </p>
-        <p>
-          <a className="underline" href="#">
-            GitHub
-          </a>
-        </p>
-        <p>
-          <a className="underline" href="#">
-            LinkedIn
-          </a>
-        </p>
-      </div>
-      <Image
-        className="object-contain"
-        src={CirclesBlack}
-        alt="Tall white tree design"
-        width={250}
-        height={250}
-      />
     </div>
   );
 }

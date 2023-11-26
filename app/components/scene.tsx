@@ -24,7 +24,7 @@ const ring = {
     opacity: 0,
     height: 0,
     width: 0,
-    transform: `rotate(${diameter * 3}deg)`,
+    transform: `rotate(0deg)`,
   }),
   visible: (diameter: number) => ({
     opacity: 1,
@@ -39,8 +39,9 @@ const ring = {
     transform: "rotate(360deg)",
     transition: {
       transform: {
+        delay: -100 / diameter,
         type: "linear",
-        duration: 18,
+        duration: (diameter + 3) / 3,
         repeat: Infinity,
         ease: "linear",
       },
@@ -279,7 +280,7 @@ export function Scene() {
         </motion.div>
       </motion.div>
 
-      <div className="absolute hidden bottom-0 left-20 lg:block">
+      <div className="absolute hidden bottom-0 left-20 xl:block">
         <Image src={CirclesWhite} alt="text.." width={250} height={250} />
       </div>
       <div className="absolute bottom-5 lg:bottom-16 right-[8%] md:right-[12%] w-32 md:w-auto">
