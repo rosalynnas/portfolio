@@ -4,7 +4,7 @@ import CirclesBlack from "/public/images/circles-black.png";
 
 export function Footer() {
   return (
-    <div className="footer relative w-4/5 pb-20 lg:w-auto lg:p-20 mx-auto leading-relaxed">
+    <div className="footer relative w-4/5 pb-20 lg:w-auto lg:p-20 mx-auto leading-relaxed text-black">
       <Image
         className="absolute bottom-0 left-48 lg:left-80 lg:w-20"
         src={ShortTree}
