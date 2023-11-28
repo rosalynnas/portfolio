@@ -11,7 +11,7 @@ const background = {
     background: "linear-gradient(180deg, #1A2243 10%, #987E66 100%)",
   },
   day: {
-    background: "linear-gradient(180deg, #90A0D3 0%, #cdd2e0 100%)",
+    background: "linear-gradient(180deg, #8192C8 0%, #cdd2e0 80%)",
     transition: {
       type: "tween",
       delay: 0,
