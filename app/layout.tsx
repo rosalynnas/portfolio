@@ -6,8 +6,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rosalynn Ashwood",
-  description: "Software engineer based in Montreal",
+  title: {
+    default: "Rosalynn Ashwood",
+    template: "%s | Rosalynn Ashwood",
+  },
+  description: "Montreal-based software engineer",
 };
 
 export default function RootLayout({
@@ -16,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={inter.className}>
+      <body>{children}</body>
       <Analytics />
     </html>
   );
