@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, LayoutGroup } from "framer-motion";
-import { useTime } from "framer-motion";
 
 import Image from "next/image";
 import Logo from "public/images/logo-white.png";
@@ -63,12 +62,13 @@ const moon = {
     transition: {
       type: "spring",
       delay: 2,
+      duration: 2,
     },
   }),
   rotating: {
     transform: "translate(-50%, -50%) rotate(360deg)",
     transition: {
-      delay: 3,
+      delay: 4,
       transform: {
         type: "linear",
         duration: 5,
@@ -79,10 +79,30 @@ const moon = {
   },
 };
 
+const foreground = {
+  night: {
+    filter: "brightness(20%) contrast(140%)",
+  },
+  day: {
+    filter: "brightness(100%) contrast(100%)",
+    transition: {
+      type: "tween",
+      delay: 2,
+      duration: 5,
+      ease: "easeOut",
+    },
+  },
+};
+
 export function Scene() {
   return (
-    <div className="h-[100dvh] max-h-[100dvh] md:h-[calc(100dvh-6rem)] md:max-h-[calc(100dvh-6rem)] overflow-x-clip relative grid place-items-center">
-      <div className="absolute top-0 h-20 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center">
+    <motion.div className="h-[100dvh] max-h-[100dvh] md:h-[calc(100dvh-6rem)] md:max-h-[calc(100dvh-6rem)] overflow-x-clip relative grid place-items-center">
+      <motion.div
+        className="absolute top-0 h-20 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center"
+        variants={foreground}
+        initial="night"
+        animate="day"
+      >
         <div className="w-16 h-8 lg:w-auto lg:h-auto">
           <Image
             src={Logo}
@@ -122,9 +142,9 @@ export function Scene() {
             <Image src={MoonThree} alt="text.." fill={true} />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      <motion.div className="absolute h-2/3 top-20 w-full md:top-0 xl:h-[45rem] xl:w-[45rem] grid place-items-center -z-1 ">
+      <motion.div className="absolute h-2/3 top-20 left-1/2 -translate-x-1/2 w-full md:top-0 xl:h-[45rem] xl:w-[45rem] grid place-items-center -z-1 overflow-y-clip">
         <motion.div
           className="absolute"
           variants={ring}
@@ -280,10 +300,20 @@ export function Scene() {
         </motion.div>
       </motion.div>
 
-      <div className="absolute hidden bottom-0 left-20 xl:block">
+      <motion.div
+        className="absolute hidden -bottom-1 left-20 xl:block"
+        variants={foreground}
+        initial="night"
+        animate="day"
+      >
         <Image src={CirclesWhite} alt="text.." width={250} height={250} />
-      </div>
-      <div className="absolute bottom-5 lg:bottom-16 right-[8%] md:right-[12%] w-32 md:w-auto">
+      </motion.div>
+      <motion.div
+        className="absolute bottom-5 lg:bottom-16 right-[8%] md:right-[12%] w-32 md:w-auto"
+        variants={foreground}
+        initial="night"
+        animate="day"
+      >
         <Image
           src={TallTree}
           alt="text.."
@@ -291,8 +321,13 @@ export function Scene() {
           height={300}
           className="object-cover"
         />
-      </div>
-      <div className="absolute bottom-0 right-0 translate-y-1/2 w-full md:w-auto">
+      </motion.div>
+      <motion.div
+        className="absolute bottom-0 right-0 translate-y-1/2 w-full md:w-auto"
+        variants={foreground}
+        initial="night"
+        animate="day"
+      >
         <Image
           src={Dots}
           alt="text.."
@@ -300,7 +335,7 @@ export function Scene() {
           height="300"
           className="object-cover object-left"
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
