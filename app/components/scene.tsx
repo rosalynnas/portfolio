@@ -5,18 +5,14 @@ import { motion, LayoutGroup } from "framer-motion";
 import Image from "next/image";
 import Logo from "public/images/logo-white.png";
 import TallTree from "public/images/tall-tree-white.png";
-import CirclesWhite from "public/images/circles-white.png";
-import CirclesAndLine from "public/images/circles-and-line.svg";
+import Circles from "public/images/circles-white.png";
+import CirclesAndLine from "public/images/circles-and-line.png";
 import Dots from "public/images/dots-white.png";
 import MoonOne from "public/images/moon-one.svg";
 import MoonTwo from "public/images/moon-two.svg";
 import MoonThree from "public/images/moon-three.svg";
 import MoonFour from "public/images/moon-four.svg";
 import MoonFive from "public/images/moon-five.svg";
-import RingSolid from "public/images/ring-solid.svg";
-import RingThick from "public/images/ring-thick.svg";
-import RingDotted from "public/images/ring-dotted.svg";
-import RingThin from "public/images/ring-thin.svg";
 
 const ring = {
   hidden: (diameter: number) => ({
@@ -103,7 +99,7 @@ export function Scene() {
     <div className="h-[100dvh] max-h-[100dvh] md:h-[calc(100dvh-6rem)] md:max-h-[calc(100dvh-6rem)] overflow-x-clip relative">
       <div className="h-full overflow-y-clip relative grid place-items-center">
         <motion.div
-          className="absolute top-0 h-20 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center"
+          className="absolute top-4 h-24 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center"
           variants={foreground}
           initial="night"
           animate="day"
@@ -114,21 +110,22 @@ export function Scene() {
               alt="R.A."
               width={86}
               height={41}
+              quality={100}
               className="object-contain"
             />
           </div>
-          <div className="w-20 h-full lg:w-32 relative">
+          <div className="w-32 h-full lg:w-44 relative">
             <Image
               src={CirclesAndLine}
               alt="text.."
               fill={true}
-              className="object-contain"
+              className="object-contain object-right"
             />
             <motion.div
-              className="h-1/2 w-1/2 absolute"
+              className="h-3/5 w-3/5 absolute"
               initial={{
                 top: "50%",
-                left: 0,
+                left: "5%",
                 y: "-50%",
                 x: "-50%",
                 rotate: 0,
@@ -329,7 +326,7 @@ export function Scene() {
           initial="night"
           animate="day"
         >
-          <Image src={CirclesWhite} alt="text.." width={250} height={250} />
+          <Image src={Circles} alt="text.." width={250} height={250} />
         </motion.div>
         <motion.div
           className="absolute bottom-5 lg:bottom-16 right-[8%] md:right-[12%] w-32 md:w-auto"
@@ -342,6 +339,8 @@ export function Scene() {
             alt="text.."
             width={160}
             height={300}
+            quality={100}
+            priority
             className="object-cover"
           />
         </motion.div>
@@ -358,6 +357,8 @@ export function Scene() {
           alt="text.."
           width="1000"
           height="300"
+          quality={100}
+          priority
           className="object-cover object-left"
         />
       </motion.div>
