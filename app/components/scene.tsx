@@ -31,15 +31,21 @@ const ring = {
     height: `${diameter}%`,
     transition: {
       type: "spring",
-      delay: diameter * 0.009,
+      velocity: 0.01,
+      dampening: 50,
+      // duration: 5,
+      // bounce: 0.5,
+      stiffness: 75,
+      mass: 0.02 * diameter,
+      delay: diameter * 0.004,
     },
   }),
   rotating: (diameter: number) => ({
     transform: "rotate(360deg)",
     transition: {
       transform: {
-        delay: -100 / diameter,
-        type: "linear",
+        delay: -100 / diameter + 2,
+        type: "tween",
         duration: (diameter + 3) / 3,
         repeat: Infinity,
         ease: "linear",
@@ -70,7 +76,7 @@ const moon = {
     transition: {
       delay: 4,
       transform: {
-        type: "linear",
+        type: "tween",
         duration: 5,
         repeat: Infinity,
         ease: "linear",
@@ -88,8 +94,8 @@ const foreground = {
     transition: {
       type: "tween",
       delay: 2,
-      duration: 5,
-      ease: "easeOut",
+      duration: 10,
+      ease: "anticipate",
     },
   },
 };
@@ -144,7 +150,7 @@ export function Scene() {
         </div>
       </motion.div>
 
-      <motion.div className="absolute h-2/3 top-20 left-1/2 -translate-x-1/2 w-full md:top-0 xl:h-[45rem] xl:w-[45rem] grid place-items-center -z-1 overflow-y-clip">
+      <motion.div className="absolute h-2/3 top-20 left-1/2 -translate-x-1/2 w-full md:top-0 xl:h-[45rem] xl:w-[45rem] grid place-items-center -z-1 lg:overflow-y-clip">
         <motion.div
           className="absolute"
           variants={ring}

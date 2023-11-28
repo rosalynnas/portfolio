@@ -8,15 +8,15 @@ import { motion } from "framer-motion";
 
 const background = {
   night: {
-    background: "linear-gradient(180deg, #091334 10%, #8797C8 100%)",
+    background: "linear-gradient(180deg, #1A2243 10%, #987E66 100%)",
   },
   day: {
-    background: "linear-gradient(180deg, #8797c8 0%, #cdd2e0 100%)",
+    background: "linear-gradient(180deg, #90A0D3 0%, #cdd2e0 100%)",
     transition: {
       type: "tween",
-      delay: 2,
-      duration: 4,
-      ease: "easeIn",
+      delay: 0,
+      duration: 16,
+      ease: "anticipate",
     },
   },
 };
@@ -29,9 +29,9 @@ const foreground = {
     background: "linear-gradient(180deg, #dfe3ed 0%, #EFEBC8 100%)",
     transition: {
       type: "tween",
-      delay: 2,
-      duration: 5,
-      ease: "easeOut",
+      delay: 2.26,
+      duration: 10,
+      ease: "anticipate",
     },
   },
 };
