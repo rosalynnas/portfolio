@@ -4,8 +4,8 @@ export function Bio() {
       <div className="container flex flex-col gap-10">
         <div>
           <h1 className="text-4xl font-serif font-light">
-            <span className="block">Hey, I&apos;m Rosalynn—a</span>
-            <span>Montreal-based software engineer.</span>
+            <span className="block">Hey, I&apos;m Rosalynn—</span>
+            <span>a Montreal-based software engineer.</span>
           </h1>
         </div>
         <div className="w-auto lg:w-[38rem] flex flex-col gap-6">

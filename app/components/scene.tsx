@@ -88,7 +88,7 @@ const foreground = {
     transition: {
       type: "tween",
       delay: 2,
-      duration: 8,
+      duration: 10,
       ease: "anticipate",
     },
   },
@@ -99,7 +99,7 @@ export function Scene() {
     <div className="h-[100dvh] max-h-[100dvh] md:h-[calc(100dvh-6rem)] md:max-h-[calc(100dvh-6rem)] overflow-x-clip relative">
       <div className="h-full overflow-y-clip relative grid place-items-center">
         <motion.div
-          className="absolute top-4 h-24 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center"
+          className="absolute top-4 h-20 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center"
           variants={foreground}
           initial="night"
           animate="day"
@@ -114,7 +114,7 @@ export function Scene() {
               className="object-contain"
             />
           </div>
-          <div className="w-32 h-full lg:w-44 relative">
+          <div className="w-28 h-full lg:w-44 relative">
             <Image
               src={CirclesAndLine}
               alt="text.."
