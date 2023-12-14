@@ -2,6 +2,7 @@
 
 import { Scene } from "./components/scene";
 import { Bio } from "./components/bio";
+import { Skills } from "./components/skills";
 import { Footer } from "./components/footer";
 
 import { motion } from "framer-motion";
@@ -11,7 +12,7 @@ const background = {
     background: "linear-gradient(180deg, #1A2243 10%, #987E66 100%)",
   },
   day: {
-    background: "linear-gradient(180deg, #90A0D3 0%, #cdd2e0 100%)",
+    background: "linear-gradient(180deg, #8192C8 0%, #cdd2e0 80%)",
     transition: {
       type: "tween",
       delay: 0,
@@ -23,7 +24,7 @@ const background = {
 
 const foreground = {
   night: {
-    background: "linear-gradient(180deg, #070809 10%, #8797C8 100%)",
+    background: "linear-gradient(180deg, #070809 10%, #070809 100%)",
   },
   day: {
     background: "linear-gradient(180deg, #dfe3ed 0%, #EFEBC8 100%)",
