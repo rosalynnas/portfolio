@@ -88,7 +88,7 @@ const foreground = {
     transition: {
       type: "tween",
       delay: 2,
-      duration: 10,
+      duration: 8,
       ease: "anticipate",
     },
   },

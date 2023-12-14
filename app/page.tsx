@@ -16,7 +16,7 @@ const background = {
     transition: {
       type: "tween",
       delay: 0,
-      duration: 16,
+      duration: 14,
       ease: "anticipate",
     },
   },
@@ -30,8 +30,8 @@ const foreground = {
     background: "linear-gradient(180deg, #dfe3ed 0%, #EFEBC8 100%)",
     transition: {
       type: "tween",
-      delay: 2.26,
-      duration: 10,
+      delay: 2.32,
+      duration: 8,
       ease: "anticipate",
     },
   },
