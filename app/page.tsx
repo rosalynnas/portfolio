@@ -2,7 +2,6 @@
 
 import { Scene } from "./components/scene";
 import { Bio } from "./components/bio";
-import { Skills } from "./components/skills";
 import { Footer } from "./components/footer";
 
 import { motion } from "framer-motion";
