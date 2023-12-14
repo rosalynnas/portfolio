@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, LayoutGroup } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
 import Logo from "public/images/logo-white.png";
@@ -326,7 +326,7 @@ export function Scene() {
           initial="night"
           animate="day"
         >
-          <Image src={Circles} alt="text.." width={250} height={250} />
+          <Image src={Circles} alt="text.." width={200} height={200} />
         </motion.div>
         <motion.div
           className="absolute bottom-5 lg:bottom-16 right-[8%] md:right-[12%] w-32 md:w-auto"
@@ -359,7 +359,7 @@ export function Scene() {
           height="300"
           quality={100}
           priority
-          className="object-cover object-left"
+          className="object-cover object-right"
         />
       </motion.div>
     </div>

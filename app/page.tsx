@@ -2,6 +2,7 @@
 
 import { Scene } from "./components/scene";
 import { Bio } from "./components/bio";
+import { Skills } from "./components/skills";
 import { Footer } from "./components/footer";
 
 import { motion } from "framer-motion";
@@ -23,7 +24,7 @@ const background = {
 
 const foreground = {
   night: {
-    background: "linear-gradient(180deg, #070809 10%, #8797C8 100%)",
+    background: "linear-gradient(180deg, #070809 10%, #070809 100%)",
   },
   day: {
     background: "linear-gradient(180deg, #dfe3ed 0%, #EFEBC8 100%)",
