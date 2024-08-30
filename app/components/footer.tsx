@@ -44,7 +44,6 @@ export function Footer() {
           <Image src={Logo} alt="R.A." width={80} height={40} quality={100} />
           <p className="mt-5">Rosalynn Ashwood</p>
           <p>hello@rosalynnas.com</p>
-          <p>+1 418 262 9406</p>
         </div>
         <div>
           <p className="mb-5">Find me on </p>
