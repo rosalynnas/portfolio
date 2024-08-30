@@ -36,7 +36,7 @@ export function Bio() {
             <a className="underline" href="https://github.com/rosalynnas">
               GitHub projects
             </a>
-            &nbsp; to see what&apos;s caught my interest lately.
+            &nbsp;to see what&apos;s caught my interest lately.
           </p>
         </div>
       </div>
