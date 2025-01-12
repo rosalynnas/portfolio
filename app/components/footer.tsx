@@ -22,7 +22,7 @@ const foreground = {
 
 export function Footer() {
   return (
-    <div className="footer relative w-4/5 pb-20 lg:w-auto lg:p-20 mx-auto leading-relaxed text-blue-950">
+    <div className="footer relative w-4/5 pb-20 lg:w-auto lg:p-20 mx-auto leading-relaxed text-blue-950 z-0">
       <motion.div variants={foreground} initial="night" animate="day">
         <Image
           className="absolute bottom-0 left-48 lg:left-80 lg:w-20"
@@ -33,7 +33,7 @@ export function Footer() {
         />
       </motion.div>
       <Image
-        className="absolute bottom-0 right-0 w-1/3 lg:w-72 lg:right-8"
+        className="absolute bottom-0 right-0 w-1/3 lg:w-72 lg:right-8 pointer-events-none"
         src={Circles}
         alt="text.."
         width={300}
