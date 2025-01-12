@@ -1,6 +1,6 @@
 export function Bio() {
   return (
-    <section className="py-64 px-16 md:pb-48 xl:pt-32 xl:px-20 xl:pb-20 text-blue-950 leading-relaxed">
+    <section className="py-64 px-16 md:pb-48 xl:pt-32 xl:px-20 xl:pb-20 text-blue-950 leading-relaxed z-1">
       <div className="container flex flex-col gap-10">
         <div>
           <h1 className="text-4xl font-serif font-light">
@@ -8,7 +8,7 @@ export function Bio() {
             <span>a Montreal-based software engineer.</span>
           </h1>
         </div>
-        <div className="w-auto lg:w-[38rem] flex flex-col gap-6">
+        <div className="w-auto lg:w-[38rem] flex flex-col gap-6 z-10">
           <p>
             I&apos;m a back end developer, Rubyist, and amateur hydroponic
             gardener. My past projects include&nbsp;
