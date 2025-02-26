@@ -96,7 +96,7 @@ const foreground = {
 
 export function Scene() {
   return (
-    <div className="h-[100dvh] max-h-[100dvh] md:h-[calc(100dvh-6rem)] md:max-h-[calc(100dvh-6rem)] overflow-x-clip relative">
+    <div className="h-[100svh] max-h-[100svh] md:h-[calc(100svh-6rem)] md:max-h-[calc(100svh-6rem)] overflow-x-clip relative">
       <div className="h-full overflow-y-clip relative grid place-items-center">
         <motion.div
           className="absolute top-4 h-20 lg:h-32 flex left-4 lg:left-8 right-0 justify-between items-center"
