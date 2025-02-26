@@ -33,6 +33,16 @@ export const metadata: Metadata = {
     template: "%s | Rosalynn Ashwood",
   },
   description: "Montreal-based software engineer",
+  openGraph: {
+    images: [
+      {
+        url: "/images/rosalynnas.png",  
+        width: 1390,
+        height: 925, 
+        alt: "Preview of rosalynnas.com landing page", 
+      },
+    ],
+  },
 };
 
 const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
