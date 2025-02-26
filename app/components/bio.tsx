@@ -10,7 +10,7 @@ export function Bio() {
         </div>
         <div className="w-auto lg:w-[38rem] flex flex-col gap-6 z-10">
           <p>
-            I&apos;m a back end developer, Rubyist, and amateur hydroponic
+            I&apos;m a back-end developer, Rubyist, and amateur hydroponic
             gardener. My past projects include&nbsp;
             <a className="underline" href="https://lesproduitsduquebec.com">
               Les Produits Du Québec

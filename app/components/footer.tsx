@@ -23,9 +23,8 @@ const foreground = {
 export function Footer() {
   return (
     <div className="footer relative w-4/5 pb-20 lg:w-auto lg:p-20 mx-auto leading-relaxed text-blue-950 z-0">
-      <motion.div variants={foreground} initial="night" animate="day">
+      <motion.div className="absolute bottom-0 left-48 lg:left-80 lg:w-20" variants={foreground} initial="night" animate="day">
         <Image
-          className="absolute bottom-0 left-48 lg:left-80 lg:w-20"
           src={ShortTree}
           alt="text.."
           width={130}
@@ -45,19 +44,11 @@ export function Footer() {
           <p className="mt-5">Rosalynn Ashwood</p>
           <p>hello@rosalynnas.com</p>
         </div>
-        <div>
+        <div className="hidden">
           <p className="mb-5">Find me on </p>
           <p>
             <a className="underline" href="https://github.com/rosalynnas">
               GitHub
-            </a>
-          </p>
-          <p>
-            <a
-              className="underline"
-              href="https://www.linkedin.com/in/rosalynnas/"
-            >
-              LinkedIn
             </a>
           </p>
         </div>
