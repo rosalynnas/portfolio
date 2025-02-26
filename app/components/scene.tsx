@@ -172,7 +172,7 @@ export function Scene() {
           </motion.div>
 
           <motion.div
-            className="absolute"
+            className="absolute will-change-transform"
             variants={ring}
             custom={30}
             initial="hidden"
@@ -192,7 +192,7 @@ export function Scene() {
               />
             </svg>
             <motion.div
-              className="absolute top-1/2 left-[2px] -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-[2px] -translate-x-1/2 -translate-y-1/2 will-change-transform"
               variants={moon}
               initial="hidden"
               custom={10}
@@ -225,7 +225,7 @@ export function Scene() {
           </motion.div>
 
           <motion.div
-            className="absolute"
+            className="absolute will-change-transform"
             variants={ring}
             custom={40}
             initial="hidden"
@@ -245,7 +245,7 @@ export function Scene() {
               />
             </svg>
             <motion.div
-              className="absolute top-1/2 left-[3px] -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-[3px] -translate-x-1/2 -translate-y-1/2 will-change-transform"
               variants={moon}
               initial="hidden"
               custom={10}
@@ -256,7 +256,7 @@ export function Scene() {
           </motion.div>
 
           <motion.div
-            className="absolute"
+            className="absolute will-change-transform"
             variants={ring}
             custom={75}
             initial="hidden"
@@ -276,7 +276,7 @@ export function Scene() {
               />
             </svg>
             <motion.div
-              className="absolute top-1/2 left-[2px] -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-[2px] -translate-x-1/2 -translate-y-1/2 will-change-transform"
               variants={moon}
               initial="hidden"
               custom={6}
